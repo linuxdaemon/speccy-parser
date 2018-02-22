@@ -1,0 +1,16 @@
+language: python
+install:
+- pip install -Ur requirements.txt
+script:
+- python -m compileall
+deploy:
+  provider: pypi
+  user: linuxdaemon
+  password:
+    secure: mOY7/4nv6nc0KybbqxOs9gXVJNNAfK4uH2ATFe0pFkgrEeEeIQ5mfjtABaryH9L68/YFeVM5tibNlhDHldGQPEDeiJ1lZ50mdPQE8fnFeSuFlycR/Fk6TF1NX7Rls9kMUhMzPqFBBtwp0HYhNPyreqBjCdoNpK+/kHhr45NA5HeQayFjTGvlgmXZVxELd8le9XcGvQE8KaR1IiaoKxwV1W8z6ahne0acpbl7sWhZJf8kvc354GelDC325SKX+pghlPgcfwut4QURcaRh+cp+RTjDPFFlOYJuzouiqCujiWhyKZpYvkFP41EuTFSHKwU7O/9Sa5tn8w7qkLY9Nub9+BMikBz1t/p+VZ7yeuD8dArLaj0Ee8gXoV4Hi7CrpSRS5LJAxzUZZNPfyrcwVmfOREyj67FXDH75hx53S9ZsHHEsbaULgX1Y1jlw7MqNgdQD+tL/Cg7X8k7KBIXJc5sQ8rTArQ7hM4XGJnyfbsfklvR+NgLJ0nRki1YruNfpIDkDhFIUMQzsAVrrEeDSJAwB0eDCeNR0oWoUPtV8xjNr+SQK7QRpBvu8O/xh8VpwfmpbFLJBJtcp6+7+Dk8aapJF8hiXUAybjOdltrUfNfr5+9LbSR6Z8qD+TZGXAFwG/C242Kc2pYlOu/hgGuzdNG6YknYmMiHi5Ct8zfyRGr40Neg=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
+    repo: linuxdaemon/speccy-parser
+env:
+- PYTHONPATH=.
